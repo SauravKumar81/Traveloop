@@ -16,5 +16,5 @@ Traveloop is a full-stack Next.js + Supabase SaaS platform designed for collabor
 
 ## Team Members
 * **krish verma** - GitHub: [@krishvrm](https://github.com/krishvrm)
-* **shreya nair** - GitHub: [@shreyanair21](https://github.com/shreyanair21)
+* **shreya nair** - GitHub: [@shreyanair21](https://github.com/shreya-nair21)
 * **Saurav kumar** - GitHub: [@SauravKumar81](https://github.com/SauravKumar81)
