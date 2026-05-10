@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Traveloop - Create Your Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#dad7ff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-bright": "#39393b",
+                    "on-primary-fixed": "#0f0069",
+                    "inverse-surface": "#e5e1e4",
+                    "primary": "#c3c0ff",
+                    "on-tertiary-container": "#ebd2ff",
+                    "on-secondary-container": "#00344e",
+                    "on-tertiary-fixed": "#2c0051",
+                    "inverse-primary": "#4d44e3",
+                    "on-tertiary": "#490080",
+                    "tertiary-fixed": "#f0dbff",
+                    "secondary-fixed-dim": "#89ceff",
+                    "surface": "#131315",
+                    "on-error": "#690005",
+                    "primary-container": "#4f46e5",
+                    "surface-variant": "#353437",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#6900b3",
+                    "on-background": "#e5e1e4",
+                    "surface-tint": "#c3c0ff",
+                    "on-secondary-fixed": "#001e2f",
+                    "surface-container-low": "#1b1b1d",
+                    "outline": "#918fa1",
+                    "inverse-on-surface": "#303032",
+                    "secondary-fixed": "#c9e6ff",
+                    "secondary": "#89ceff",
+                    "on-primary": "#1d00a5",
+                    "primary-fixed": "#e2dfff",
+                    "on-surface-variant": "#c7c4d8",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#131315",
+                    "on-secondary": "#00344d",
+                    "on-surface": "#e5e1e4",
+                    "surface-container-highest": "#353437",
+                    "surface-container-high": "#2a2a2c",
+                    "outline-variant": "#464555",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "background": "#131315",
+                    "tertiary-container": "#862dd4",
+                    "on-secondary-fixed-variant": "#004c6e",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e10",
+                    "tertiary": "#ddb7ff",
+                    "secondary-container": "#00a2e6",
+                    "surface-container": "#201f21",
+                    "tertiary-fixed-dim": "#ddb7ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "xl": "80px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 33, 0.7);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #c3c0ff;
+            box-shadow: 0 0 0 4px rgba(195, 192, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Elements -->
+<div class="fixed inset-0 z-[-1]">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px]"></div>
+</div>
+<!-- Top Navigation Anchor -->
+<nav class="sticky top-0 z-50 w-full bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">travel_explore</span>
+<span class="font-headline-lg text-headline-lg font-bold tracking-tight text-primary-container dark:text-primary-fixed-dim">Traveloop</span>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant transition-colors hover:text-primary" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-colors hover:text-primary" href="#">Premium</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-colors hover:text-primary" href="#">Support</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-lg hover:bg-primary/10 transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">language</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center py-xl px-gutter relative">
+<div class="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
+<!-- Left Info Side -->
+<div class="lg:col-span-5 hidden lg:block">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-md">Join the elite circle of travelers.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-md">
+                    Unlock a world of planned spontaneity. Manage your itineraries, expenses, and travel journals in one sophisticated platform.
+                </p>
+<div class="space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Smart Itineraries</p>
+<p class="text-sm text-on-surface-variant opacity-70">AI-powered travel planning.</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Expense Tracking</p>
+<p class="text-sm text-on-surface-variant opacity-70">Seamless budget management.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Form Area -->
+<div class="lg:col-span-7">
+<div class="glass-panel p-lg rounded-[2rem] shadow-xl">
+<div class="flex flex-col items-center mb-lg">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full border-2 border-dashed border-outline-variant flex flex-col items-center justify-center bg-surface-container-high transition-all hover:bg-surface-container-highest cursor-pointer overflow-hidden mb-sm">
+<img class="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" data-alt="A cinematic, high-fashion profile portrait placeholder with soft rim lighting and a deep charcoal background. The aesthetic is clean and professional, using a cool color palette with subtle indigo highlights to match the Traveloop brand identity. The lighting is moody yet clear, suggesting a high-end user experience for a premium travel application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwkmOYgIIvYdt8o8nvjIHPc67Agky2lr8eHDNO0wPnYoD_THbOKYnU7MGQhYkvOo2PVLVk-dBsuaV2v-tjc7l3C26v7whmVE00gTIvwLxzXhYAH03pSTRfURkwuwAcPw3OjWizOzOJye_vsGmzxr_GwJGwEUvyMcPiJuDAKehnl64aB4BHnoqYJQa5R_cl4D33GC0W1HW7fhj9CkkEPfJo-aLlR6bl7bV9rK_4t1eDKon699R9jYMzlSndvmA1U05C2C7VDxHKlj4M"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-surface/40">
+<span class="material-symbols-outlined text-primary mb-1">add_a_photo</span>
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-on-primary-container">Upload</span>
+</div>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Create Account</h2>
+<p class="text-on-surface-variant font-label-md">Screen 2 • Registration</p>
+</div>
+<form class="space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">First Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface placeholder:text-outline/50 form-input-focus transition-all" placeholder="John" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">Last Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface placeholder:text-outline/50 form-input-focus transition-all" placeholder="Doe" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">Email Address</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface placeholder:text-outline/50 form-input-focus transition-all" placeholder="john.doe@visionary.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">Phone Number</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface placeholder:text-outline/50 form-input-focus transition-all" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">City</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface placeholder:text-outline/50 form-input-focus transition-all" placeholder="San Francisco" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">Country</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface form-input-focus transition-all appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select Country</option>
+<option value="us">United States</option>
+<option value="uk">United Kingdom</option>
+<option value="fr">France</option>
+<option value="jp">Japan</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1">Additional Information</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-sm text-on-surface placeholder:text-outline/50 form-input-focus transition-all resize-none" placeholder="Tell us about your travel style or dietary preferences..." rows="3"></textarea>
+</div>
+<div class="pt-sm">
+<button class="w-full bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary py-md rounded-xl font-label-md text-lg shadow-lg shadow-primary-container/20 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-sm group" type="submit">
+                                Register Users
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="mt-lg text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                            Already have an account? 
+                            <a class="text-primary hover:underline transition-all" href="#">Sign In</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Space -->
+<footer class="w-full max-w-container-max mx-auto px-gutter py-lg flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/10">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60 mb-sm md:mb-0">© 2024 Traveloop Premium. All rights reserved.</p>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+<!-- No BottomNavBar or SideNav rendered as per "Transactional/Onboarding" suppression rule -->
+</body></html>

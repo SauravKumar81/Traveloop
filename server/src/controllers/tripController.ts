@@ -28,8 +28,8 @@ export const getTrips = async (req: Request, res: Response): Promise<void> => {
 export const getTripById = async (req: Request, res: Response): Promise<void> => {
   try {
     const trip = await Trip.findById(req.params.id)
-      .populate('creator', 'displayName email avatar')
-      .populate('members', 'displayName email avatar');
+      .populate('creator', 'displayName email avatarUrl')
+      .populate('members', 'displayName email avatarUrl');
 
     if (!trip) {
       res.status(404).json({ message: 'Trip not found' });
@@ -98,8 +98,8 @@ export const updateTrip = async (req: Request, res: Response): Promise<void> => 
       new: true,
       runValidators: true,
     })
-      .populate('creator', 'displayName email avatar')
-      .populate('members', 'displayName email avatar');
+      .populate('creator', 'displayName email avatarUrl')
+      .populate('members', 'displayName email avatarUrl');
 
     // Emit event to all users in the trip room
     const io = req.app.get('io');

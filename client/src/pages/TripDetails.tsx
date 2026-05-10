@@ -7,6 +7,9 @@ import { ArrowLeft, Plus, Calendar, MapPin, Clock, Sparkles, Loader2 } from 'luc
 import { format } from 'date-fns';
 import AddItineraryModal from '../components/AddItineraryModal';
 import { io, Socket } from 'socket.io-client';
+import BudgetExpenses from '../components/trip/BudgetExpenses';
+import PackingList from '../components/trip/PackingList';
+import TripJournal from '../components/trip/TripJournal';
 
 interface IItineraryItem {
   _id?: string;
@@ -27,6 +30,10 @@ interface ITrip {
   description?: string;
   status: string;
   itinerary: IItineraryItem[];
+  budget?: number;
+  expenses: any[];
+  packingList: any[];
+  journalNotes?: string;
   creator: {
     _id: string;
     displayName: string;
@@ -42,6 +49,7 @@ export default function TripDetails() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [, setSocket] = useState<Socket | null>(null);
+  const [activeTab, setActiveTab] = useState<'itinerary' | 'budget' | 'packing' | 'notes'>('itinerary');
 
   useEffect(() => {
     fetchTrip();
@@ -169,8 +177,37 @@ export default function TripDetails() {
           </div>
         )}
 
-        {/* Itinerary Section */}
-        <div className="space-y-6">
+        {/* Tabs Navigation */}
+        <div className="flex border-b border-zinc-800 overflow-x-auto custom-scrollbar pb-1 mb-6">
+          <button 
+            className={`px-4 py-2 font-medium text-sm transition-colors whitespace-nowrap ${activeTab === 'itinerary' ? 'text-indigo-400 border-b-2 border-indigo-500' : 'text-zinc-400 hover:text-zinc-200'}`}
+            onClick={() => setActiveTab('itinerary')}
+          >
+            Itinerary Builder
+          </button>
+          <button 
+            className={`px-4 py-2 font-medium text-sm transition-colors whitespace-nowrap ${activeTab === 'budget' ? 'text-indigo-400 border-b-2 border-indigo-500' : 'text-zinc-400 hover:text-zinc-200'}`}
+            onClick={() => setActiveTab('budget')}
+          >
+            Budget & Expenses
+          </button>
+          <button 
+            className={`px-4 py-2 font-medium text-sm transition-colors whitespace-nowrap ${activeTab === 'packing' ? 'text-indigo-400 border-b-2 border-indigo-500' : 'text-zinc-400 hover:text-zinc-200'}`}
+            onClick={() => setActiveTab('packing')}
+          >
+            Packing Checklist
+          </button>
+          <button 
+            className={`px-4 py-2 font-medium text-sm transition-colors whitespace-nowrap ${activeTab === 'notes' ? 'text-indigo-400 border-b-2 border-indigo-500' : 'text-zinc-400 hover:text-zinc-200'}`}
+            onClick={() => setActiveTab('notes')}
+          >
+            Notes & Journal
+          </button>
+        </div>
+
+        {/* Tab Content */}
+        {activeTab === 'itinerary' && (
+          <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-semibold text-white">Itinerary</h2>
             <div className="flex items-center gap-3">
@@ -256,6 +293,32 @@ export default function TripDetails() {
             </div>
           )}
         </div>
+        )}
+
+        {activeTab === 'budget' && (
+          <BudgetExpenses 
+            tripId={trip._id} 
+            budget={trip.budget} 
+            expenses={trip.expenses || []} 
+            onUpdate={fetchTrip} 
+          />
+        )}
+
+        {activeTab === 'packing' && (
+          <PackingList 
+            tripId={trip._id}
+            packingList={trip.packingList || []}
+            onUpdate={fetchTrip}
+          />
+        )}
+
+        {activeTab === 'notes' && (
+          <TripJournal 
+            tripId={trip._id}
+            notes={trip.journalNotes || ''}
+            onUpdate={fetchTrip}
+          />
+        )}
 
       </div>
 

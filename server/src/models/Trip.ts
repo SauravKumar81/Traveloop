@@ -10,6 +10,20 @@ export interface IItineraryItem {
   notes?: string;
 }
 
+export interface IExpense {
+  _id?: mongoose.Types.ObjectId;
+  description: string;
+  amount: number;
+  category: 'accommodation' | 'food' | 'transport' | 'activities' | 'other';
+  date?: Date;
+}
+
+export interface IPackingItem {
+  _id?: mongoose.Types.ObjectId;
+  item: string;
+  packed: boolean;
+}
+
 export interface ITrip extends Document {
   title: string;
   destination: string;
@@ -21,6 +35,10 @@ export interface ITrip extends Document {
   coverImage?: string;
   status: 'planning' | 'ongoing' | 'completed';
   itinerary: IItineraryItem[];
+  budget?: number;
+  expenses: IExpense[];
+  packingList: IPackingItem[];
+  journalNotes?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -76,6 +94,31 @@ const tripSchema = new Schema<ITrip>(
         notes: { type: String },
       },
     ],
+    budget: {
+      type: Number,
+      default: 0,
+    },
+    expenses: [
+      {
+        description: { type: String, required: true },
+        amount: { type: Number, required: true },
+        category: {
+          type: String,
+          enum: ['accommodation', 'food', 'transport', 'activities', 'other'],
+          default: 'other',
+        },
+        date: { type: Date },
+      },
+    ],
+    packingList: [
+      {
+        item: { type: String, required: true },
+        packed: { type: Boolean, default: false },
+      },
+    ],
+    journalNotes: {
+      type: String,
+    },
   },
   {
     timestamps: true,

@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   displayName: { type: String },
   avatarUrl: { type: String },
-  subscriptionTier: { type: String, enum: ['free', 'pro', 'team'], default: 'free' },
+  subscriptionTier: { type: String, enum: ['free', 'pro', 'enterprise'], default: 'free' },
 }, { timestamps: true });
 
 userSchema.pre('save', async function() {
